@@ -1,0 +1,22 @@
+{
+  "pages":[
+    "pages/welfare/welfare",
+    "pages/myself/index",
+    "pages/turntable/index",
+    "pages/index/index",
+    "pages/otherpage/web/index"
+  ],
+  "window":{
+    "backgroundColor":"#F6F6F6",
+    "backgroundTextStyle":"#000000",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "Tmi猫精选",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance":30,
+    "navigationBarTextStyle":"black"
+  },
+  "navigateToMiniProgramAppIdList":[
+    "wxd0fe51e321948927"
+  ],
+  "cloud":true
+}

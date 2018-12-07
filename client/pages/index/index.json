@@ -1,0 +1,8 @@
+{
+    "backgroundColor":"#FFFFFF",
+    "usingComponents": {
+        "nav-bar": "/commpents/navbar/index",
+        "roll-num":"/commpents/rollnum/index",
+        "turntable":"/commpents/turntable/index"
+    }
+}

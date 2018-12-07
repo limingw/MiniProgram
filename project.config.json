@@ -1,0 +1,18 @@
+{
+	"miniprogramRoot": "client/",
+	"qcloudRoot": "server/",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"appid": "wxa819b5373062fea0",
+	"projectname": "mymvc",
+	"compileType": "miniprogram",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"libVersion": "2.4.1",
+	"condition": {}
+}

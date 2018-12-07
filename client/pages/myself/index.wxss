@@ -1,0 +1,102 @@
+page{
+    width: 100%;
+}
+
+/**
+***我的信息***
+**/
+.userinfos{
+    border-bottom: 1rpx solid #d5dbe9;
+    height: 150rpx;
+    margin: auto 28rpx;
+}
+.userinfo-data{
+    font-size: 32rpx;
+}
+.userinfo-nickname{
+    margin: auto 20rpx;
+    vertical-align:middle;
+    font-weight: bold;
+}
+.userinfo-avatar{
+    width: 120rpx;
+    height: 120rpx;
+    margin: 10rpx auto;
+    border-radius: 50%;
+    vertical-align:middle;
+}
+.userinfo-button{
+    float: right;
+    height: 150rpx;
+    line-height: 150rpx;
+}
+.userinfo-putcash{
+    width: 155rpx;
+    height: 60rpx;
+    font-size: 24rpx;
+    line-height: 56rpx;
+    float: right;
+    margin:45rpx 0rpx;
+    border-radius: 3px;
+    background-color: #fe4c58;
+    color: white;
+    text-align: center;
+    padding:1rpx 2rpx 2rpx 2rpx;
+    border-radius: 50rpx;
+}
+
+/**
+***金额信息***
+**/
+.money{
+    margin: auto 28rpx;
+    border-bottom: 20rpx solid #f9f9f9;
+    text-align: center;
+    height: 150rpx;
+    vertical-align: middle;
+}
+.money_cash{
+    width: 49%;
+    border-right: 1rpx solid #d5dbe9;
+    display: inline-block;
+    height: 150rpx;
+}
+.money_num{
+    font-size: 36rpx;
+    font-weight: bold;
+    margin-top: 30rpx;
+}
+.money_title{
+    font-size: 26rpx;
+    margin-top: 10rpx;
+}
+.profit_cash{
+    width: 49%;
+    display: inline-block;
+    height: 150rpx;
+}
+
+/**
+***收益广播层***
+**/
+.tips{
+    height: auto;
+    
+    height: 500rpx;
+    position: absolute;
+}
+.money_tips{
+    border-bottom: 1px solid #d5dbe9;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 25rpx;
+    vertical-align: middle;
+    margin: auto 28rpx;
+}
+.tip{
+    padding-left: 26rpx;
+}
+.addmoney{
+    padding-right: 26rpx;
+    float: right;
+}

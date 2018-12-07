@@ -1,0 +1,68 @@
+<!--index.wxml-->
+<!-- <nav-bar navbar-data='{{nvabarData}}'></nav-bar> -->
+<turntable navbar-data=''></turntable>
+<view class="container">
+    <!-- 用户信息部分 -->
+    <view class="userinfo">
+        <view class="userinfo-margin">
+            <!--用户头像和名称-->
+            <view class="userinfo-data">
+                <open-data type="userAvatarUrl" class="userinfo-avatar" background-size="cover"></open-data>
+                <open-data type="userNickName"></open-data>
+                <text class="userinfo-nickname">，欢迎回来</text>
+            </view>
+            
+            <!--金额签到-->
+            <view class="userinfo-money">
+                <text class="userinfo-allmoney">{{usermoney}}<text wx:if="{{isint}}">.</text></text>
+                <view class="{{isint?'scroll-data':''}}" wx:for="{{len}}" wx:key="{{index}}" wx:if="{{isint}}" >
+                    <view class="scroll-num" animation="{{animation[index]}}" >
+                        <text class="unit-num">0</text>
+                        <text class="unit-num">1</text>
+                        <text class="unit-num">2</text>
+                        <text class="unit-num">3</text>
+                        <text class="unit-num">4</text>
+                        <text class="unit-num">5</text>
+                        <text class="unit-num">6</text>
+                        <text class="unit-num">7</text>
+                        <text class="unit-num">8</text>
+                        <text class="unit-num">9</text>
+                    </view>
+                    <view class="commachar" wx:if="{{((len-(index+1))%3===0) && index < len-1}}">
+                    </view>
+                </view>
+                <button class="userinfo-sign" bindtap="SignIn">签到</button>
+            </view>
+        </view>
+    </view>
+
+    <!--图片轮播-->
+    <view class="broadcast">
+        <swiper class="broadcast-swiper" indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}"
+            interval="{{interval}}"
+            duration="{{duration}}"
+            indicator-active-color="#ffffff"
+            circul="true">
+            <block wx:for="{{imgUrls}}" wx:key="index">
+                <swiper-item>
+                    <navigator url="{{item.link}}" hover-class="navigator-hover">
+                        <image src="{{item.url}}" class="broadcast-img"  />
+                    </navigator>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+
+    <!-- 上传图片测试 -->
+    <view class="uploader">
+        <navigator url="../welfare/welfare" open-type="navigate">
+            <button>福利社</button>
+        </navigator>
+        <button bindtap='doUpload'>上传图片</button>
+        <button bindtap='addData'>增加数据</button>
+        <navigator url="../otherpage/baidu/index" open-type="navigate">
+            <button>跳转H5</button>
+        </navigator>
+    </view>
+</view>

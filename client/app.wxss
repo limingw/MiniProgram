@@ -1,0 +1,187 @@
+/**app.wxss**/
+page {
+  position: relative;
+  z-index: 9999999999;
+  background: #FFF;
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+} 
+
+/**
+***公共登录用户信息样式***
+**/
+.userinfo{
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+  border-bottom:1px solid #d5dbe9;
+  font-size: 28rpx;
+  color: #000000;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  z-index: 199;
+}
+.userinfo-data{
+  display: flex;
+  float: left;
+}
+.userinfo-margin{
+  margin: auto 28rpx;
+}
+/**
+***登录用户头像****
+**/
+.userinfo-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 10rpx auto;
+  border-radius: 50%;
+  vertical-align:middle;
+}
+
+/**
+***操作提示背景层****
+**/
+.dialog{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 222;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+.dialog-content{
+  margin: 200rpx auto;
+  width: 500rpx;
+  height: 500rpx;
+  padding: 8px;
+  border: 1px solid #e8e9f7;
+  background-color: #FFF;
+  z-index: 244;
+  overflow: hidden;
+  border-radius: 5px;
+}
+/**
+***提现动画dialog****
+**/
+.dialog-animate{
+  margin: 100rpx auto;
+  text-align: center;
+  z-index: 333;
+}
+.dialog-title{
+  text-align: center;
+  border-bottom: 1rpx solid #e5dbe9;
+  padding-bottom:20rpx;
+}
+.dialog-title-putcash{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.dialog-title-close{
+  float: right;
+  color: gray;
+  font-size: 40rpx;
+}
+.dialog-contents{
+  margin: 20rpx 20rpx;
+  height: 250rpx;
+}
+.dialog-contents-roletext{
+  font-size: 30rpx;
+  color: #f0a314;
+}
+
+/**
+***数字滚动****
+**/
+.scroll-data{
+  line-height: 42rpx;
+  height: 42rpx;
+  font-size: 32rpx;
+  overflow: hidden;
+  display: inline-block;
+  position: absolute;
+  top: 20rpx;
+  left: 570rpx;
+  color: #000000;
+}
+
+.scroll-num{
+  width:26rpx;
+  display:inline-block;
+  position: relative;
+  top:0rpx;
+}
+
+.unit-num{
+  height: 42rpx;
+  overflow: hidden;
+  display: block;
+}
+
+.commachar{
+  width:56rpx;
+  display:inline-block;
+  position: relative;
+  vertical-align: top;
+}
+
+/**
+***提示框内容****
+**/
+.dialog-contents-role{
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+.dialog-contents-surplus{
+  color: #fa421d;
+}
+.dialog-contents-footer{
+  text-align: center;
+}
+.dialog-contents-footer-button{
+  color: #ffffff;
+  border-radius: 20px;
+  width: 340rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #f73a3a;
+}
+.dialog-contents-footer-tips{
+  font-size: 18rpx;
+  color: #413f3f;
+  margin-top: 25rpx;
+}
+.dialog-title-smallhb{
+  width: 44rpx;
+  height: 52rpx;
+  margin: 10rpx 10rpx 0rpx 0rpx;
+  vertical-align: middle;
+  position: absolute;
+  top: 5rpx;
+  left: 160rpx;
+}
+.animate_onlygold{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 300rpx;
+  left: 350rpx;
+}
+
+/**
+***最外层的margin***
+**/
+.margin_all{
+  margin: auto 28rpx;
+}

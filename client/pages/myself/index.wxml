@@ -1,0 +1,68 @@
+<!--操作提示框-->
+    <view class="dialog" wx:if="{{dialog.index}}">
+        <view class="dialog-content"  animation="{{animationData}}">
+            <view class="dialog-title">
+                <image class="dialog-title-smallhb" src="../assets/images/smallhb.png" />
+                <text class="dialog-title-putcash">提现</text>
+                <text class="dialog-title-close" bindtap="DiaClose">×</text>
+            </view>
+            <!--提现-->
+            <view class="dialog-contents">
+                <text class="dialog-contents-roletext">提现规则：</text>
+                <view class="dialog-contents-role">
+                    <text>1.提现最低金额为5元</text>
+                </view>
+                <view class="dialog-contents-role">
+                    <text>2.每天提现次数为3次(<text class="dialog-contents-surplus">剩余{{surplus}}次</text>)</text>
+                </view>
+            </view>
+            <view class="dialog-contents-footer">
+                <button class="dialog-contents-footer-button" bindtap="PutCash">全部提现</button>
+                <view class="dialog-contents-footer-tips">
+                    <text>直接提现到微信零钱</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+<!--我的信息-->
+<view class="userinfos">
+    <!--用户头像和名称-->
+    <view class="userinfo-data">
+        <open-data type="userAvatarUrl" class="userinfo-avatar" background-size="cover"></open-data>
+        <open-data type="userNickName" class="userinfo-nickname"></open-data>
+    </view>
+            
+    <!--金额提现-->
+    <view class="userinfo-button">
+        <button class="userinfo-putcash" bindtap="DiaPutCash" wx:if="{{true}}">提现</button>
+    </view>
+</view>
+
+<!--金额信息-->
+<view class="money">
+    <view class="money_cash">
+        <view class="money_num">
+            <text>{{cash}}元</text>
+        </view>
+        <view class="money_title">
+            <text>现金金额</text>
+        </view>
+    </view>
+    <view class="profit_cash">
+        <view class="money_num">
+            <text>{{profit}}元</text>
+        </view>
+        <view class="money_title">
+            <text>累计收益</text>
+        </view>
+    </view>
+</view>
+
+<!--用户赏金广播-->
+<scroll-view class="tips" scroll-with-animation="{{true}}" scroll-y="{{true}}" lower-threshold='60' scroll-top="2"  enable-back-to-top="{{true}}">
+    <view class="money_tips" wx:for="{{moneyTips}}" wx:key="{{index}}">
+        <text class="tip">{{item.tips}}</text>
+        <text class="addmoney">{{item.money}}</text>
+    </view>
+</scroll-view>

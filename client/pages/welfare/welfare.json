@@ -1,0 +1,12 @@
+{
+    "backgroundColor":"#F6F6F6",
+    "backgroundTextStyle":"#000000",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "福利社",
+    "navigationBarHeight": "902rpx",
+    "navigationBarTextStyle":"black",
+    "component": true,
+    "usingComponents": {
+        "nav-bar": "/commpents/navbar/index"
+    }
+}

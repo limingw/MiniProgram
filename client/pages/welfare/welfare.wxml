@@ -1,0 +1,169 @@
+<view class="container">
+    <!--操作提示框-->
+    <view class="dialog" wx:if="{{dialog.index}}">
+        <view class="dialog-content"  animation="{{animationData}}">
+            <view class="dialog-title">
+                <image class="dialog-title-smallhb" src="../assets/images/smallhb.png" wx:if="{{dialog.putcash}}" />
+                <text class="dialog-title-putcash">{{dialog.title}}</text>
+                <text class="dialog-title-close" bindtap="DiaClose">×</text>
+            </view>
+            <!--提现-->
+            <view class="dialog-contents" wx:if="{{dialog.putcash}}">
+                <text class="dialog-contents-roletext">{{dialog.content}}</text>
+                <view class="dialog-contents-role">
+                    <text>1.提现最低金额为5元</text>
+                </view>
+                <view class="dialog-contents-role">
+                    <text>2.每天提现次数为3次(<text class="dialog-contents-surplus">剩余{{surplus}}次</text>)</text>
+                </view>
+            </view>
+            <!--活动规则-->
+            <view class="dialog-contents" wx:else>
+                <text class="dialog-contents-roletext">{{dialog.content}}</text>
+                <view class="dialog-contents-role">
+                    <text decode="{{true}}">1、点击福利任务，跳转到小程序，成功授权后，回到该页面即可领取现金红包。</text>
+                </view>
+                <view class="dialog-contents-role">
+                    <text>2、每个福利都可以获得随机现金奖励。</text>
+                </view>
+                <view class="dialog-contents-role">
+                    <text>3、现金奖励可以直接提现到微信零钱。</text>
+                </view>
+                 <view class="dialog-contents-role">
+                    <text>4、该活动的解释权在法律规定的范围内归本公众号所有。</text>
+                </view>
+            </view>
+            <view class="dialog-contents-footer" wx:if="{{dialog.putcash}}">
+                <button class="dialog-contents-footer-button" open-type="getUserInfo" bindtap="PutCash">全部提现</button>
+                <view class="dialog-contents-footer-tips">
+                    <text>直接提现到微信零钱</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!--提现动画-->
+    <view class="dialog" wx:if="{{animate.index}}">
+        <view class="dialog-animate" wx:if="{{animate.content}}">
+            <image id="animate_hb" src="../assets/images/bighb.png" />
+            <view class="dialog_animate_money">
+                <text>
+                    微信零钱￥{{pocketmoney}}
+                </text>
+            </view>
+            <!-- <image class="{{animate.moregold?'animate_display':'animate_gold'}}" animation="{{animate.animationgold}}" src="../assets/images/moregold.png" wx:if="{{false}}" />
+            <image class="{{animate.smhb?'animate_display':'animate_smhb'}}" animation="{{animate.animationhb}}" src="../assets/images/morehb.png" wx:if="{{false}}" /> -->
+            <image src="../assets/images/bighb.png" class="animate_onlygold" wx:if="{{addmoney.index}}" animation="{{addmoney.animationData}}" />
+        </view>
+    </view>
+    
+    <!-- 用户信息部分 -->
+    <view class="userinfo">
+        <view class="userinfo-margin">
+            <!--用户头像和名称-->
+            <view class="userinfo-data">
+                <open-data type="userAvatarUrl" class="userinfo-avatar" background-size="cover"></open-data>
+                <open-data type="userNickName"></open-data>
+                <text class="userinfo-nickname">{{nickName}}，欢迎回来</text>
+            </view>
+            
+            <!--金额提现-->
+            <view class="userinfo-money">
+                <image src="../assets/images/gold.png" class="{{isbit?'userinfo-money-gold1':'userinfo-money-gold'}}" />
+                <text class="userinfo-allmoney" wx:if="{{isbit}}">{{usermoney}}</text>
+                <view class="scroll-data" wx:for="{{len}}" wx:key="{{index}}" >
+                    <view class="scroll-num" animation="{{animation[index]}}" >
+                        <text class="unit-num">0</text>
+                        <text class="unit-num">1</text>
+                        <text class="unit-num">2</text>
+                        <text class="unit-num">3</text>
+                        <text class="unit-num">4</text>
+                        <text class="unit-num">5</text>
+                        <text class="unit-num">6</text>
+                        <text class="unit-num">7</text>
+                        <text class="unit-num">8</text>
+                        <text class="unit-num">9</text>
+                    </view>
+                    <view class="commachar" wx:if="{{((len-(index+1))%3===0) && index < len-1}}">
+                    </view>
+                </view>
+                <text class="userinfo-allmoney1">元</text>
+                <button class="userinfo-putcash" bindtap="DiaPutCash" open-type="getUserInfo" wx:if="{{false}}">存入微信零钱</button>
+            </view>
+        </view>
+    </view>
+
+    <!--任务墙-->
+    <scroll-view class="taskwall" scroll-with-animation="{{true}}" scroll-y="{{true}}" lower-threshold="50"  enable-back-to-top="{{true}}">
+        <view class="margin_all">
+            <!--文字部分-->
+            <view class="taskwall-title">
+                <text class="taskwall-title-textwall">任务墙</text>
+                <text class="taskwall-title-textexplain" bindtap="Description">活动说明</text>
+            </view>
+            <!--图片部分-->
+            <view class="taskwall-picture" wx:for="{{imgUrls}}" wx:key="{{index}}">
+                 <navigator url="{{item.link}}" hover-class="navigator-hover">
+                    <!--背景图-->
+                    <image src="{{item.src}}" class="{{item.oldhb?'taskwall-pic1':'taskwall-pic'}}" />
+                    <!--icon-->
+                    <image class="taskwall-icon" src="{{item.icon}}" />
+                    <!--广告标题-->
+                    <view class="taskwall-texttitle" wx:if="{{true}}">
+                        <text decode="{{true}}">{{item.title}}</text>
+                    </view>
+                    <!--广告内容-->
+                    <view class="taskwall-textdetail" wx:if="{{true}}">
+                        <text decode="{{true}}">{{item.detail}}</text>
+                    </view>
+                </navigator>
+                <!--领取红包部分-->
+                <view class="{{item.oldhb?'taskwall-clickhb1':'taskwall-clickhb'}}" data-id="{{item.id}}" bindtap="Gotask1">
+                    <view class="taskwall-hbbg">
+                        <image class="{{item.switch?'taskwall-clickhb-pic1':'taskwall-clickhb-pic'}}" src="{{item.smallpic}}" />
+                    </view>
+                    <button class="taskwall-clickhb-button" wx:if="{{item.shared}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">{{item.buttontext}}</button>
+                    <button class="taskwall-clickhb-button" wx:else open-type="share">{{item.buttontext}}</button>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+
+    <!--热门小游戏-->
+    <view class="hotgames-tags" wx:if="{{false}}">
+        <text decode="{{true}}">热门游戏&gt;</text>
+    </view>
+    <scroll-view class="hotgames" wx:if="{{false}}" scroll-with-animation="{{true}}" scroll-x="{{true}}" lower-threshold="50"  enable-back-to-top="{{true}}">
+        <view class="hotgames-margin">
+            <view class="hotgames-content" wx:for="{{hotgames}}" wx:key="{{index}}">
+                <navigator url="{{item.link}}" hover-class="navigator-hover">
+                    <image class="hotgames-content-img" src="{{item.src}}" data-index="{{index}}" bindtap='ClickGame' />
+                    <view class="hotgames-content-name">
+                        <text>{{item.name}}</text>
+                    </view>
+                    <view class="hotgames-content-people">
+                        <text>{{item.people}}万人在玩</text>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </scroll-view>
+
+    <!--福利商城-->
+    <view class="hotgames-tags" wx:if="{{true}}">
+        <text decode="{{true}}">福利商城&gt;</text>
+    </view>
+    <scroll-view class="markets" wx:if="{{true}}" scroll-with-animation="{{true}}" scroll-x="{{true}}" lower-threshold="50"  enable-back-to-top="{{true}}">
+        <view class="markets-margin">
+            <view class="markets-content" wx:for="{{markets}}" wx:key="{{index}}">
+                <image class="markets-content-img" src="{{item.src}}" data-index="{{index}}" bindtap='ClickMarkets' />
+                <view class="markets-content-name">
+                    <text>{{item.content}}</text>
+                </view>
+                <view class="markets-content-money">
+                    <text>￥{{item.money}}</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

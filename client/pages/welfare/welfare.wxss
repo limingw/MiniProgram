@@ -1,0 +1,401 @@
+/**
+***登录用户提现按钮****
+**/
+.userinfo-putcash{
+    width: 155rpx;
+    height: 60rpx;
+    font-size: 24rpx;
+    line-height: 56rpx;
+    float: right;
+    margin:10rpx 0rpx 10rpx 10rpx;
+    vertical-align:middle;
+    border-radius: 3px;
+    background-color: #04c004;
+    color: white;
+    text-align: center;
+    padding:1rpx 2rpx 2rpx 2rpx;
+}
+/**
+***当前用户所剩金额****
+**/
+.userinfo-money{
+    float: right;
+}
+.userinfo-money-gold{
+    width: 40rpx;
+    height: 40rpx;
+    margin: 0rpx 30rpx 10rpx 0rpx;
+    vertical-align:middle;
+    font-size: 32rpx;
+}
+.userinfo-money-gold1{
+    width: 40rpx;
+    height: 40rpx;
+    margin: 0rpx 10rpx 10rpx 0rpx;
+    vertical-align:middle;
+    font-size: 32rpx;
+}
+.userinfo-allmoney{
+    margin-right: 22rpx;
+    font-size: 32rpx;
+}
+.userinfo-allmoney1{
+    font-size: 32rpx;
+}
+
+/**
+***任务墙层****
+**/
+.taskwall{
+    border-bottom:1px solid #d5dbe9;
+    height: auto;
+    position: relative;
+    top: 80rpx;
+}
+.taskwall-margin{
+    margin: auto 28rpx;
+}
+/**
+***任务墙标题****
+**/
+.taskwall-title{
+    margin: 30rpx auto;
+    height: auto;
+}
+/**
+***任务墙文字****
+**/
+.taskwall-title-textwall{
+    font-size: 30rpx;
+    font-weight: bolder;
+    margin-right: 10rpx;
+}
+/**
+***活动说明文字****
+**/
+.taskwall-title-textexplain{
+    font-size: 22rpx;
+    color: red;
+    text-decoration: underline;
+}
+.taskwall-picture{
+    margin-bottom: 10rpx;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    position: relative;
+}
+/**
+**领取之后变暗**
+**/
+.taskwall-pic1{
+    width: 100%;
+    height: 200rpx;
+    border-radius: 5px;
+    /* box-shadow:1px 1px 3px 3px #f7f5f5; */
+    /* -webkit-filter: brightness(0.60);
+    -moz-filter: brightness(0.60);
+    -ms-filter: brightness(0.60);
+    -o-filter: brightness(0.60);
+    filter: brightness(0.60); */
+}
+/**
+**没领取之前**
+**/
+.taskwall-pic{
+    width: 100%;
+    height: 200rpx;
+    border-radius: 5px;
+    /* box-shadow:1px 1px 3px 3px #f7f5f5; */
+}
+.taskwall-clickhb{
+    position: absolute;
+    top: 30rpx;
+    right: 25rpx;
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+    text-align: center;
+}
+.taskwall-clickhb1{
+    position: absolute;
+    top: 30rpx;
+    right: 22rpx;
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+    text-align: center;
+    margin-bottom: 98rpx;
+    /* -webkit-filter: brightness(0.60);
+    -moz-filter: brightness(0.60);
+    -ms-filter: brightness(0.60);
+    -o-filter: brightness(0.60);
+    filter: brightness(0.60); */
+}
+/**
+**前往领取按钮**
+**/
+.taskwall-clickhb-button{
+    width: 110rpx;
+    height: 35rpx;
+    line-height: 30rpx;
+    font-size: 20rpx;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #f73a3a;
+    padding: 1rpx 1rpx 2rpx 1rpx;
+}
+/**
+**领取红包图片样式**
+**/
+.taskwall-clickhb-pic1{
+    width: 83rpx;
+    height: 85rpx;
+    margin-top:4px;
+}
+/**
+**前往领取红包样式**
+**/
+.taskwall-clickhb-pic{
+    width: 69rpx;
+    height: 84rpx;
+    margin-top:4px;
+}
+/**
+**红包背景圆圈**
+**/
+.taskwall-hbbg{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 5rpx solid#e9e9e9;
+    margin: -10rpx 0rpx 16rpx 15rpx;
+}
+/**
+**广告icon**
+**/
+.taskwall-icon{
+    width:156rpx;
+    height:160rpx;
+    position:absolute;
+    top:21rpx;
+    left:24rpx;
+    border-radius:50%;
+}
+/**
+**广告title**
+**/
+.taskwall-texttitle{
+    position: absolute;
+    top: 35rpx;
+    left: 195rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+}
+/**
+**广告描述**
+**/
+.taskwall-textdetail{
+    position: absolute;
+    top: 100rpx;
+    left: 195rpx;
+    font-size: 20rpx;
+}
+
+/**
+***提现大红包动画****
+**/
+@-webkit-keyframes animate_hb{
+    from{
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+    to{
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}
+@keyframes animate_hb{
+    from{
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+    to{
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}
+#animate_hb{
+    animation: animate_hb 1.0s;
+    height: 920rpx;
+    width: 740rpx;
+}
+
+/**
+***提现金额动画****
+**/
+.dialog_animate_money{
+    position: absolute;
+    top: 646rpx;
+    width: 100%;
+    font-size: 48rpx;
+    color: #ffffff;
+    animation: dialog_animate_money 1.2s;
+    text-align: center;
+}
+@-webkit-keyframes dialog_animate_money{
+    from{
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+    to{
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}
+@keyframes dialog_animate_money{
+    from{
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+    to{
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}
+
+/**
+***提现小红包动画****
+**/
+.animate_display{
+    display: none;
+}
+.animate_smhb{
+    /* animation: animate_smhb 1.4s; */
+    position: absolute;
+    top: 390rpx;
+    left: 270rpx;
+    width: 200rpx;
+    height: 92rpx;
+    z-index: 1111;
+}
+
+/**
+***提现小金币动画****
+**/
+.animate_gold{
+    position: absolute;
+    top: 390rpx;
+    left: 270rpx;
+    width: 187rpx;
+    height: 87rpx;
+    z-index: 1009;
+    /* animation: animate_gold 1.4s; */
+}
+
+/**
+***数字滚动****
+**/
+.scroll-data{
+    position: absolute;
+    /* top: 19rpx;
+    left: 510rpx; */
+    top: 19rpx;
+    left: 670rpx;
+}
+
+/**
+***热门游戏****
+**/
+.hotgames{
+    position: relative;
+    top: 80rpx;
+    margin: 20rpx 0rpx 20rpx 0rpx;
+    border-bottom:1px solid #d5dbe9;
+    word-break:break-all;
+}
+.hotgames-margin{
+    margin: auto 28rpx;
+    display: flex;
+    flex: row;
+    white-space: nowrap;
+}
+.hotgames-tags{
+    font-size: 30rpx;
+    position: relative;
+    top: 80rpx;
+    margin: 10rpx 28rpx 0rpx 28rpx;
+}
+.hotgames-content{
+    display: inline-block;
+    height: 200rpx;
+    width: 200rpx;
+    margin: 10rpx 10rpx 30rpx 0rpx;
+}
+.hotgames-content-img{
+    width: 140rpx;
+    height: 140rpx;
+}
+.hotgames-content-name{
+    font-size: 26rpx;
+    text-align: center;
+}
+.hotgames-content-people{
+    font-size: 22rpx;
+    color: #cbced3;
+    text-align: center;
+}
+
+/**
+***热门商城****
+**/
+.markets{
+    position: relative;
+    top: 80rpx;
+    margin: 20rpx 0rpx 20rpx 0rpx;
+    border-bottom:1px solid #d5dbe9;
+}
+.markets-margin{
+    margin: auto 28rpx;
+    display: flex;
+    flex: row;
+    white-space: nowrap;
+}
+.markets-tags{
+    font-size: 30rpx;
+    position: relative;
+    top: 80rpx;
+    margin: 10rpx 28rpx 0rpx 28rpx;
+}
+.markets-content{
+    /* display: inline-block; */
+    height: auto;
+    width: 200rpx;
+    margin: 10rpx 20rpx 30rpx 0rpx;
+    text-align: center;
+}
+.markets-content-img{
+    width: 160rpx;
+    height: 160rpx;
+}
+.markets-content-name{
+    font-size: 26rpx;
+    text-align: center;
+    word-wrap: break-word;
+    display:-webkit-box;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    white-space:normal !important;
+}
+.markets-content-money{
+    font-size: 22rpx;
+    color: red;
+    text-align: center;
+    word-break:break-all;
+}
